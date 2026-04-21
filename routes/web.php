@@ -11,6 +11,15 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Static pages for About and Contact
+Route::get('/about', function () {
+    return view('about_page');
+});
+
+Route::get('/contact', function () {
+    return view('contact_page');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
