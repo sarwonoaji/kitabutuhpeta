@@ -1,20 +1,48 @@
-<nav class="bg-white dark:bg-[#1b1b18] shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex items-center">
-                <a href="/" class="text-xl font-bold text-[#1b1b18] dark:text-white">Kitab Utuh Peta</a>
+<nav class="bg-gradient-to-r from-purple-600 to-indigo-600 shadow-md sticky top-0 z-50 text-white">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="flex justify-between items-center h-16">
+
+            <!-- LOGO -->
+            <a href="/" class="flex items-center">
+                <img src="{{ asset('Kitabutuhpeta.png') }}" class="h-10 w-auto">
+            </a>
+
+            <!-- DESKTOP MENU -->
+            <div class="hidden md:flex space-x-6">
+                <a href="{{ url('/') }}" class="text-sm font-medium hover:opacity-80">Beranda</a>
+                <a href="{{ url('/about') }}" class="text-sm font-medium hover:opacity-80">Tentang</a>
+                <a href="{{ url('/contact') }}" class="text-sm font-medium hover:opacity-80">Hubungi Kami</a>
             </div>
-            <div class="flex items-center space-x-4">
-                <a href="{{ url('/') }}" class="text-[#1b1b18] dark:text-white hover:text-gray-600 dark:hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Welcome</a>
-                <a href="{{ url('/about') }}" class="text-[#1b1b18] dark:text-white hover:text-gray-600 dark:hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Tentang</a>
-                <a href="{{ url('/contact') }}" class="text-[#1b1b18] dark:text-white hover:text-gray-600 dark:hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Hubungi Kami</a>
-                @if (Route::has('login'))
-                    <a href="{{ route('login') }}" class="text-[#1b1b18] dark:text-white hover:text-gray-600 dark:hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Log In</a>
-                @endif
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium">Register</a>
-                @endif
-            </div>
+
+            <!-- HAMBURGER -->
+            <button id="menuBtn" class="md:hidden text-2xl">
+                ☰
+            </button>
+
         </div>
     </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="hidden md:hidden bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+
+        <a href="{{ url('/') }}" class="block px-4 py-3 border-b">Beranda</a>
+        <a href="{{ url('/about') }}" class="block px-4 py-3 border-b">Tentang</a>
+        <a href="{{ url('/contact') }}" class="block px-4 py-3">Hubungi Kami</a>
+
+    </div>
 </nav>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    let btn = document.getElementById("menuBtn");
+    let menu = document.getElementById("mobileMenu");
+
+    btn.addEventListener("click", function () {
+        menu.classList.toggle("hidden");
+    });
+
+});
+</script>
