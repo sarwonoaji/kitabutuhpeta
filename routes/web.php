@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AsetController;
 use App\Http\Controllers\TernakController;
 use App\Http\Controllers\GrafikTamuController;
+use App\Http\Controllers\UMKMController;
+use App\Http\Controllers\IndustriController;
 Route::get('/', function () {
     return view('welcome'); // ganti dari 'welcome' ke 'home'
 });
@@ -14,9 +16,8 @@ Route::get('/kependudukan', fn() => view('kependudukan.index'))->name('kependudu
 //Route::get('/aset-desa', fn() => view('aset.index'))->name('aset');
 Route::get('/aset-desa', [AsetController::class, 'index'])->name('aset');
 Route::get('/ternak-tani', [TernakController::class, 'index'])->name('ternak');
-Route::get('/umkm', fn() => view('umkm.index'))->name('umkm');
-//Route::get('/ternak-tani', fn() => view('ternak.index'))->name('ternak');
-Route::get('/industri', fn() => view('industri.index'))->name('industri');
+Route::get('/umkm', [UMKMController::class, 'index'])->name('umkm');
+Route::get('/industri', [IndustriController::class, 'index'])->name('industri');
 Route::get('/informasi', fn() => view('informasi.index'))->name('informasi');
 
 // ================= FITUR =================
