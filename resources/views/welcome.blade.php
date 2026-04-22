@@ -2,57 +2,76 @@
 
 @section('content')
 
-<!-- HERO SLIDER -->
-<section class="relative w-full overflow-hidden">
 
-    <div id="slider" class="flex transition-transform duration-700 ease-in-out">
-
-        <!-- SLIDE 1 -->
-        <div class="min-w-full h-56 bg-cover bg-center"
-            style="background-image:url('{{ asset('slider/1.jpg') }}');">
-
-            <div class="bg-black/40 w-full h-full flex items-center justify-center text-white">
-                <div class="text-center px-4">
-                    <h1 class="text-2xl font-bold">Kitab Utuh Peta</h1>
-                    <p class="text-sm">Sistem Informasi Desa Digital</p>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- SLIDE 2 -->
-        <div class="min-w-full h-56 bg-cover bg-center"
-            style="background-image:url('{{ asset('slider/2.jpg') }}');">
-
-            <div class="bg-black/40 w-full h-full flex items-center justify-center text-white">
-                <div class="text-center px-4">
-                    <h1 class="text-2xl font-bold">Peta Aset Desa</h1>
-                    <p class="text-sm">Kelola data aset dengan mudah</p>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- SLIDE 3 -->
-        <div class="min-w-full h-56 bg-cover bg-center"
-            style="background-image:url('{{ asset('slider/3.jpg') }}');">
-
-            <div class="bg-black/40 w-full h-full flex items-center justify-center text-white">
-                <div class="text-center px-4">
-                    <h1 class="text-2xl font-bold">Smart Village</h1>
-                    <p class="text-sm">Digitalisasi Desa Modern</p>
-                </div>
-            </div>
-
-        </div>
-
+<!-- TEKS SAMBUTAN -->
+<section class="bg-white py-4">
+    <div class="text-left px-3">
+        <h1 class="text-x sm:text-2xl font-bold text-gray-800">
+            Hallo,
+        </h1>
+        <p class="text-sm text-gray-500 mt-1">
+            Selamat Datang!
+        </p>
     </div>
+</section>
 
-    <!-- DOT -->
-    <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
-        <span class="dot w-2 h-2 bg-white rounded-full opacity-50"></span>
-        <span class="dot w-2 h-2 bg-white rounded-full opacity-50"></span>
-        <span class="dot w-2 h-2 bg-white rounded-full opacity-50"></span>
+<!-- HERO SLIDER -->
+<section class="relative w-full px-4 mt-3">
+
+    <!-- WRAPPER (INI YANG BIKIN ROUND) -->
+    <div class="relative overflow-hidden rounded-2xl shadow-lg">
+
+        <!-- SLIDER -->
+        <div id="slider" class="flex transition-transform duration-700 ease-in-out">
+
+            <!-- SLIDE 1 -->
+            <div class="min-w-full h-56 bg-cover bg-center"
+                style="background-image:url('{{ asset('slider/1.jpg') }}');">
+
+                <div class="bg-black/40 w-full h-full flex items-center justify-center text-white">
+                    <div class="text-center px-4">
+                        <h1 class="text-2xl font-bold">Kitab Utuh Peta</h1>
+                        <p class="text-sm">Sistem Informasi Desa Digital</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="min-w-full h-56 bg-cover bg-center"
+                style="background-image:url('{{ asset('slider/2.jpg') }}');">
+
+                <div class="bg-black/40 w-full h-full flex items-center justify-center text-white">
+                    <div class="text-center px-4">
+                        <h1 class="text-2xl font-bold">Peta Aset Desa</h1>
+                        <p class="text-sm">Kelola data aset dengan mudah</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="min-w-full h-56 bg-cover bg-center"
+                style="background-image:url('{{ asset('slider/3.jpg') }}');">
+
+                <div class="bg-black/40 w-full h-full flex items-center justify-center text-white">
+                    <div class="text-center px-4">
+                        <h1 class="text-2xl font-bold">Smart Village</h1>
+                        <p class="text-sm">Digitalisasi Desa Modern</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- DOT (PINDAH KE DALAM WRAPPER) -->
+        <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
+            <span class="dot w-2 h-2 bg-white rounded-full opacity-50"></span>
+            <span class="dot w-2 h-2 bg-white rounded-full opacity-50"></span>
+            <span class="dot w-2 h-2 bg-white rounded-full opacity-50"></span>
+        </div>
+
     </div>
 
 </section>
@@ -65,23 +84,23 @@
 
             @php
             $menus = [
-                ['title'=>'Kependudukan','icon'=>'👥','color'=>'bg-blue-500','route'=>'kependudukan'],
-                ['title'=>'Aset Desa','icon'=>'🏢','color'=>'bg-purple-500','route'=>'aset'],
-                ['title'=>'UMKM','icon'=>'🛒','color'=>'bg-green-500','route'=>'umkm'],
-                ['title'=>'Ternak & Tani','icon'=>'🌾','color'=>'bg-yellow-500','route'=>'ternak'],
-                ['title'=>'Industri','icon'=>'🏭','color'=>'bg-red-500','route'=>'industri'],
-                ['title'=>'Informasi','icon'=>'📢','color'=>'bg-indigo-500','route'=>'informasi'],
+                ['title'=>'Kependudukan','icon'=>'person','color'=>'bg-blue-500','route'=>'kependudukan'],
+                ['title'=>'Aset Desa','icon'=>'home','color'=>'bg-purple-500','route'=>'aset'],
+                ['title'=>'UMKM','icon'=>'store','color'=>'bg-green-500','route'=>'umkm'],
+                ['title'=>'Ternak & Tani','icon'=>'eco','color'=>'bg-yellow-500','route'=>'ternak'],
+                ['title'=>'Industri','icon'=>'work','color'=>'bg-red-500','route'=>'industri'],
+                ['title'=>'Informasi','icon'=>'info','color'=>'bg-indigo-500','route'=>'informasi'],
             ];
             @endphp
 
             @foreach($menus as $menu)
             <a href="{{ route($menu['route']) }}"
-               class="bg-white rounded-2xl p-4 shadow active:scale-95 transition">
+               class="bg-white rounded-2xl p-3 sm:p-4 shadow hover:shadow-lg active:scale-95 transition">
 
                 <div class="flex flex-col items-center">
 
                     <div class="{{ $menu['color'] }} text-white w-14 h-14 flex items-center justify-center rounded-full text-2xl mb-3 shadow">
-                        {{ $menu['icon'] }}
+                        <span class="material-icons text-xl">{{ $menu['icon'] }}</span>
                     </div>
 
                     <span class="text-sm font-semibold text-center">
@@ -110,21 +129,21 @@
 
             @php
             $fitur = [
-                ['title'=>'Grafik Tamu','icon'=>'📊','color'=>'bg-blue-400','route'=>'grafik'],
-                ['title'=>'Administrasi','icon'=>'📝','color'=>'bg-green-400','url'=>'https://pemdesbutuh.id/layanan/login'],
-                ['title'=>'Persyaratan','icon'=>'📄','color'=>'bg-purple-400','route'=>'persyaratan'],
-                ['title'=>'Masukan','icon'=>'💬','color'=>'bg-red-400','route'=>'masukan'],
+                ['title'=>'Grafik Tamu','icon'=>'bar_chart','color'=>'bg-blue-400','route'=>'grafik'],
+                ['title'=>'Administrasi','icon'=>'article','color'=>'bg-green-400','url'=>'https://pemdesbutuh.id/layanan/login'],
+                ['title'=>'Persyaratan','icon'=>'description','color'=>'bg-purple-400','route'=>'persyaratan'],
+                ['title'=>'Masukan','icon'=>'feedback','color'=>'bg-red-400','route'=>'masukan'],
             ];
             @endphp
 
             @foreach($fitur as $item)
             <a href="{{ $item['url'] ?? route($item['route']) }}"
-               class="bg-gray-50 rounded-2xl p-4 shadow active:scale-95 transition">
+               class="bg-gray-50 rounded-2xl p-3 sm:p-4 shadow hover:shadow-lg active:scale-95 transition">
 
                 <div class="flex flex-col items-center">
 
                     <div class="{{ $item['color'] }} text-white w-14 h-14 flex items-center justify-center rounded-full text-2xl mb-3 shadow">
-                        {{ $item['icon'] }}
+                        <span class="material-icons text-xl">{{ $item['icon'] }}</span>
                     </div>
 
                     <span class="text-sm font-semibold text-center">

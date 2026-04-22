@@ -44,11 +44,11 @@
 
     <!-- BUTTON BACK -->
     <div class="mt-4">
-        <a href="{{ url('/') }}"
-           class="inline-block bg-purple-500 text-white px-4 py-2 rounded-lg text-sm">
-            Tutup
-        </a>
-    </div>
+    <a href="{{ url('/') }}"
+       class="inline-block bg-gradient-to-r from-emerald-500 to-green-600 text-white px-4 py-2 rounded-lg text-sm shadow hover:opacity-90 transition">
+        Tutup
+    </a>
+</div>
 
 </div>
 
